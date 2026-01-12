@@ -94,3 +94,28 @@ p4.svg
 
 Copy those to some other location so they don't get overwritten by subsequent runs.
 
+## Running Postgres from RAM discs
+
+In Linux, everything in the /run directory seems to be RAM discs, so use the following scripts to run postgres in RAM:
+
+```
+./pgrun/ram-init.sh
+./pgrun/ram-start.sh
+./pgrun/ram-stop.sh
+```
+
+To test the performance using copy files from a ram disk, I use this script:
+
+```
+TODO: get the script
+./perf/RAM-manni-simd-copy-bench-v1.2.1.sh
+```
+
+# Scripts for copy to (not copy from) tests
+
+Now that there is also a patch to test `copy to`, we need scripts to test the performance of that. I have used these:
+
+```
+./perf/RAM-copy-to-bench-v1.0.0.sh
+./perf/copy-to-bench-v1.0.0.sh
+```
